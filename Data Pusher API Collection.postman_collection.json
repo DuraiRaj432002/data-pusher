@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "26352be6-b22b-4855-a254-4d2a1cf7ab65",
+		"name": "Data Pusher API Collection",
+		"description": "Collection for testing the Data Pusher Express API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31350212"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"Tester3@example.com\",\n    \"name\": \"Tester3\",\n    \"website\": \"https://example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/account/createAccount",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"account",
+								"createAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAccounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/account/getAllAccounts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"account",
+								"getAllAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAccountById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/account/getAccountById?id=5",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"account",
+								"getAccountById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccountById",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"Tester3@example.com\",\n    \"name\": \"Tester3\",\n    \"website\": \"https://example.com/api/test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/account/updateAccountById/7",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"account",
+								"updateAccountById",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccountById",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/account/deleteAccountById/9",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"account",
+								"deleteAccountById",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "destination",
+			"item": [
+				{
+					"name": "createDestination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountId\": 10,\n    \"url\": \"https://webhook.site/api/test\",\n    \"method\": \"POST\",\n    \"headers\": {\n        \"APP_ID\": \"1234APPID1234\",\n        \"APP_SECTET\": \"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\",\n        \"ACTION\": \"user.update\",\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"*\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/destination/createDestination",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"destination",
+								"createDestination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDestinations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/destination/getAllDestinations",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"destination",
+								"getAllDestinations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDestinationById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/destination/getDestinationById?id=1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"destination",
+								"getDestinationById"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDestinationByAccountId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/destination/getDestinationByAccountId?id=10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"destination",
+								"getDestinationByAccountId"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateDestinationById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"https://webhook.site/test/test1\",\n    \"method\": \"POST\",\n    \"headers\": \"{\\\"APP_ID\\\": \\\"1234APPID1234\\\", \\\"APP_SECTET\\\": \\\"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s\\\", \\\"ACTION\\\": \\\"user.update\\\", \\\"Content-Type\\\": \\\"application/json\\\", \\\"Accept\\\": \\\"*\\\"}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/destination/updateDestinationById/10",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"destination",
+								"updateDestinationById",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteDestinationById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/destination/deleteDestinationById/7",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"destination",
+								"deleteDestinationById",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "server",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "cl-x-token",
+						"value": "91f1c19c-42c1-41c1-bf79-9bc965801e40",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/server/incoming_data",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"server",
+						"incoming_data"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
